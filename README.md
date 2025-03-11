@@ -6,9 +6,9 @@ Este projeto é um aplicativo mobile desenvolvido em React Native (frontend) e J
 
 📅 Backlog do Projeto
 
-🎯 Sprint 1 - MVP (Autenticação e Gerenciamento Básico de Tarefas)
+🏆 Sprint 1 - MVP (Autenticação e Gerenciamento Básico de Tarefas)
 
-🔹 Criar conta e autenticar
+💡 Criar conta e autenticar
 
 📌 User Story: Como usuário, quero criar uma conta e fazer login via e-mail e senha para acessar minhas tarefas.
 
@@ -16,7 +16,7 @@ Este projeto é um aplicativo mobile desenvolvido em React Native (frontend) e J
 
 ✅ DOD: O usuário pode se registrar, fazer login e logout. Senha criptografada no banco de dados.
 
-🔹 Criar e gerenciar tarefas
+💡 Criar e gerenciar tarefas
 
 📌 User Story: Como usuário, quero criar tarefas com título, descrição e prazo para organizá-las.
 
@@ -24,7 +24,7 @@ Este projeto é um aplicativo mobile desenvolvido em React Native (frontend) e J
 
 ✅ DOD: O usuário pode criar, editar e excluir tarefas.
 
-🔹 Definir prioridade da tarefa
+💡 Definir prioridade da tarefa
 
 📌 User Story: Como usuário, quero definir a prioridade da minha tarefa para organizá-las melhor.
 
@@ -32,7 +32,7 @@ Este projeto é um aplicativo mobile desenvolvido em React Native (frontend) e J
 
 ✅ DOD: O usuário pode selecionar a prioridade ao criar ou editar uma tarefa.
 
-🔹 Listar tarefas
+💡 Listar tarefas
 
 📌 User Story: Como usuário, quero visualizar minhas tarefas em uma lista para acompanhar minhas pendências.
 
@@ -40,41 +40,7 @@ Este projeto é um aplicativo mobile desenvolvido em React Native (frontend) e J
 
 ✅ DOD: O usuário pode visualizar todas as tarefas cadastradas.
 
-🛠 Sprint 2 - Funcionalidades Avançadas
-
-🔹 Adicionar lembretes e notificações
-
-📌 User Story: Como usuário, quero adicionar lembretes às minhas tarefas e receber notificações sobre elas.
-
-✅ DOR: Serviço de notificações configurado.
-
-✅ DOD: O usuário pode definir lembretes e receber notificações no horário configurado.
-
-🔹 Criar listas de tarefas
-
-📌 User Story: Como usuário, quero organizar minhas tarefas em listas personalizadas para melhor gestão.
-
-✅ DOR: Estrutura de listas implementada no banco de dados.
-
-✅ DOD: O usuário pode criar, editar e excluir listas.
-
-🔹 Adicionar tags ou categorias
-
-📌 User Story: Como usuário, quero adicionar tags às minhas tarefas para facilitar a organização.
-
-✅ DOR: Estrutura de tags definida.
-
-✅ DOD: O usuário pode atribuir, visualizar e remover tags das tarefas.
-
-🔹 Criar rotinas de tarefas recorrentes
-
-📌 User Story: Como usuário, quero criar rotinas de tarefas diárias ou semanais para automatizar repetições.
-
-✅ DOR: Estrutura para tarefas recorrentes implementada.
-
-✅ DOD: O usuário pode definir uma tarefa como recorrente e escolher a periodicidade.
-
-🔹 Marcar tarefas como concluídas
+💡 Marcar tarefas como concluídas
 
 📌 User Story: Como usuário, quero marcar tarefas como concluídas e arquivá-las para controle do que já foi feito.
 
@@ -82,9 +48,67 @@ Este projeto é um aplicativo mobile desenvolvido em React Native (frontend) e J
 
 ✅ DOD: O usuário pode marcar tarefas como concluídas e acessá-las no histórico.
 
-🌟 Sprint 3 - Personalização e Integrações
+🛠 Sprint 2 - Funcionalidades Avançadas
 
-🔹 Modo Foco
+💡 Adicionar lembretes e notificações
+
+📌 User Story: Como usuário, quero adicionar lembretes às minhas tarefas e receber notificações sobre elas.
+
+✅ DOR: Serviço de notificações configurado.
+
+✅ DOD: O usuário pode definir lembretes e receber notificações no horário configurado.
+
+💡 Criar listas de tarefas
+
+📌 User Story: Como usuário, quero organizar minhas tarefas em listas personalizadas para melhor gestão.
+
+✅ DOR: Estrutura de listas implementada no banco de dados.
+
+✅ DOD: O usuário pode criar, editar e excluir listas.
+
+💡 Adicionar tags ou categorias
+
+📌 User Story: Como usuário, quero adicionar tags às minhas tarefas para facilitar a organização.
+
+✅ DOR: Estrutura de tags definida.
+
+✅ DOD: O usuário pode atribuir, visualizar e remover tags das tarefas.
+
+💡 Criar rotinas de tarefas recorrentes
+
+📌 User Story: Como usuário, quero criar rotinas de tarefas diárias ou semanais para automatizar repetições.
+
+✅ DOR: Estrutura para tarefas recorrentes implementada.
+
+✅ DOD: O usuário pode definir uma tarefa como recorrente e escolher a periodicidade.
+
+💡 Anexar arquivos, imagens e links
+
+📌 User Story: Como usuário, quero anexar arquivos, imagens ou links às minhas tarefas para melhor organização.
+
+✅ DOR: Sistema de upload e armazenamento definido.
+
+✅ DOD: O usuário pode adicionar e visualizar anexos em suas tarefas.
+
+💡 Classificação de tarefas
+
+📌 User Story: Como usuário, quero classificar minhas tarefas por data de vencimento ou prioridade.
+
+✅ DOR: Implementação de filtros e ordenação.
+
+✅ DOD: O usuário pode visualizar as tarefas ordenadas conforme sua escolha.
+
+💡 Compartilhamento de tarefas
+
+📌 User Story: Como usuário, quero compartilhar tarefas com outras pessoas para colaboração.
+
+✅ DOR: Definição de permissões e compartilhamento.
+
+✅ DOD: O usuário pode compartilhar tarefas com outras pessoas via link ou convite.
+
+✨ Sprint 3 - Personalização e Integrações
+
+💡 Modo Foco
 
 📌 User Story: Como usuário, quero um modo Foco que exiba apenas tarefas importantes e urgentes.
 
@@ -92,7 +116,7 @@ Este projeto é um aplicativo mobile desenvolvido em React Native (frontend) e J
 
 ✅ DOD: O usuário pode ativar/desativar o modo Foco e ver apenas as tarefas filtradas.
 
-🔹 Integração com Google Calendar
+💡 Integração com Google Calendar
 
 📌 User Story: Como usuário, quero integrar minhas tarefas ao Google Calendar para acompanhar compromissos.
 
@@ -100,7 +124,7 @@ Este projeto é um aplicativo mobile desenvolvido em React Native (frontend) e J
 
 ✅ DOD: O usuário pode importar/exportar eventos entre as plataformas.
 
-🔹 Estatísticas de desempenho
+💡 Estatísticas de desempenho
 
 📌 User Story: Como usuário, quero visualizar estatísticas sobre meu desempenho e histórico de conclusão de tarefas.
 
@@ -108,7 +132,7 @@ Este projeto é um aplicativo mobile desenvolvido em React Native (frontend) e J
 
 ✅ DOD: O usuário pode acessar gráficos e relatórios de produtividade.
 
-🔹 Personalização da interface
+💡 Personalização da interface
 
 📌 User Story: Como usuário, quero personalizar a interface do aplicativo escolhendo cores e temas.
 
