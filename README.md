@@ -1,167 +1,50 @@
-📌 Aplicativo de Gerenciamento de Tarefas
-
-Bem-vindo ao repositório do Aplicativo de Gerenciamento de Tarefas! 🚀
-
-Este projeto é um aplicativo mobile desenvolvido em React Native (frontend) e Java (backend) para ajudar os usuários a gerenciar suas tarefas de maneira eficiente.
-
-📅 Backlog do Projeto
-
-🏆 Sprint 1 - MVP (Autenticação e Gerenciamento Básico de Tarefas)
-
-💡 Criar conta e autenticar
-
-📌 User Story: Como usuário, quero criar uma conta e fazer login via e-mail e senha para acessar minhas tarefas.
-
-✅ DOR: Design das telas definido, endpoint de autenticação disponível.
-
-✅ DOD: O usuário pode se registrar, fazer login e logout. Senha criptografada no banco de dados.
-
-💡 Criar e gerenciar tarefas
-
-📌 User Story: Como usuário, quero criar tarefas com título, descrição e prazo para organizá-las.
-
-✅ DOR: Definição dos campos de tarefa e endpoint de criação.
-
-✅ DOD: O usuário pode criar, editar e excluir tarefas.
-
-💡 Definir prioridade da tarefa
-
-📌 User Story: Como usuário, quero definir a prioridade da minha tarefa para organizá-las melhor.
-
-✅ DOR: Estrutura de prioridade definida (alta, média, baixa).
-
-✅ DOD: O usuário pode selecionar a prioridade ao criar ou editar uma tarefa.
-
-💡 Listar tarefas
-
-📌 User Story: Como usuário, quero visualizar minhas tarefas em uma lista para acompanhar minhas pendências.
-
-✅ DOR: Layout da tela de listagem definido.
-
-✅ DOD: O usuário pode visualizar todas as tarefas cadastradas.
-
-💡 Marcar tarefas como concluídas
-
-📌 User Story: Como usuário, quero marcar tarefas como concluídas e arquivá-las para controle do que já foi feito.
-
-✅ DOR: Botão e lógica de conclusão implementados.
-
-✅ DOD: O usuário pode marcar tarefas como concluídas e acessá-las no histórico.
-
-🛠 Sprint 2 - Funcionalidades Avançadas
-
-💡 Adicionar lembretes e notificações
-
-📌 User Story: Como usuário, quero adicionar lembretes às minhas tarefas e receber notificações sobre elas.
-
-✅ DOR: Serviço de notificações configurado.
-
-✅ DOD: O usuário pode definir lembretes e receber notificações no horário configurado.
-
-💡 Criar listas de tarefas
-
-📌 User Story: Como usuário, quero organizar minhas tarefas em listas personalizadas para melhor gestão.
-
-✅ DOR: Estrutura de listas implementada no banco de dados.
-
-✅ DOD: O usuário pode criar, editar e excluir listas.
-
-💡 Adicionar tags ou categorias
-
-📌 User Story: Como usuário, quero adicionar tags às minhas tarefas para facilitar a organização.
-
-✅ DOR: Estrutura de tags definida.
-
-✅ DOD: O usuário pode atribuir, visualizar e remover tags das tarefas.
-
-💡 Criar rotinas de tarefas recorrentes
-
-📌 User Story: Como usuário, quero criar rotinas de tarefas diárias ou semanais para automatizar repetições.
-
-✅ DOR: Estrutura para tarefas recorrentes implementada.
-
-✅ DOD: O usuário pode definir uma tarefa como recorrente e escolher a periodicidade.
-
-💡 Anexar arquivos, imagens e links
-
-📌 User Story: Como usuário, quero anexar arquivos, imagens ou links às minhas tarefas para melhor organização.
-
-✅ DOR: Sistema de upload e armazenamento definido.
-
-✅ DOD: O usuário pode adicionar e visualizar anexos em suas tarefas.
-
-💡 Classificação de tarefas
-
-📌 User Story: Como usuário, quero classificar minhas tarefas por data de vencimento ou prioridade.
-
-✅ DOR: Implementação de filtros e ordenação.
-
-✅ DOD: O usuário pode visualizar as tarefas ordenadas conforme sua escolha.
-
-💡 Compartilhamento de tarefas
-
-📌 User Story: Como usuário, quero compartilhar tarefas com outras pessoas para colaboração.
-
-✅ DOR: Definição de permissões e compartilhamento.
-
-✅ DOD: O usuário pode compartilhar tarefas com outras pessoas via link ou convite.
-
-✨ Sprint 3 - Personalização e Integrações
-
-💡 Modo Foco
-
-📌 User Story: Como usuário, quero um modo Foco que exiba apenas tarefas importantes e urgentes.
-
-✅ DOR: Critérios para "importante e urgente" definidos.
-
-✅ DOD: O usuário pode ativar/desativar o modo Foco e ver apenas as tarefas filtradas.
-
-💡 Integração com Google Calendar
-
-📌 User Story: Como usuário, quero integrar minhas tarefas ao Google Calendar para acompanhar compromissos.
-
-✅ DOR: API do Google Calendar configurada.
-
-✅ DOD: O usuário pode importar/exportar eventos entre as plataformas.
-
-💡 Estatísticas de desempenho
-
-📌 User Story: Como usuário, quero visualizar estatísticas sobre meu desempenho e histórico de conclusão de tarefas.
-
-✅ DOR: Métricas definidas (tarefas concluídas, pendentes, tempo médio de conclusão, etc.).
-
-✅ DOD: O usuário pode acessar gráficos e relatórios de produtividade.
-
-💡 Personalização da interface
-
-📌 User Story: Como usuário, quero personalizar a interface do aplicativo escolhendo cores e temas.
-
-✅ DOR: Opções de personalização definidas.
-
-✅ DOD: O usuário pode escolher entre diferentes temas e cores para a interface.
-
-📋 Entregas por Sprint
-
-| Sprint  | Funcionalidade                                  | Descrição |
-|---------|-----------------------------------------------|------------|
-| **1**  | Criar conta e autenticação                   | Login e cadastro de usuário via e-mail e senha |
-| **1**  | Criar e gerenciar tarefas                    | Adicionar, editar e excluir tarefas |
-| **1**  | Definir prioridade                           | Priorizar tarefas como alta, média ou baixa |
-| **1**  | Listar tarefas                               | Exibir tarefas cadastradas |
-| **1**  | Marcar tarefas como concluídas              | Registrar tarefas finalizadas e arquivá-las |
-| **2**  | Adicionar lembretes e notificações          | Alertas sobre prazos de tarefas |
-| **2**  | Criar listas de tarefas                     | Organização personalizada de tarefas |
-| **2**  | Adicionar tags/categorias                   | Etiquetar tarefas para melhor organização |
-| **2**  | Criar rotinas de tarefas recorrentes        | Definir repetições diárias ou semanais |
-| **2**  | Anexar arquivos, imagens e links           | Adicionar anexos às tarefas |
-| **2**  | Classificação de tarefas                   | Ordenar tarefas por data de vencimento ou prioridade |
-| **2**  | Compartilhamento de tarefas                | Permitir colaboração com outras pessoas |
-| **3**  | Modo Foco                                   | Exibir apenas tarefas urgentes/importantes |
-| **3**  | Integração com Google Calendar             | Sincronização de eventos/tarefas |
-| **3**  | Estatísticas de desempenho                 | Relatórios e gráficos de produtividade |
-| **3**  | Visualização de tarefas (Lista, Kanban, Calendário) | Diferentes formas de exibição |
-| **3**  | Escanear QR Code ou código de barras       | Vincular tarefas a códigos QR/barras |
-| **3**  | Personalização da interface                | Customização de temas e cores |
-
-
+# Aplicativo de Gerenciamento de Tarefas - Tarefa Manager
+
+**Status do projeto:** Em andamento  
+**Objetivo:** Desenvolver um aplicativo para gerenciamento de tarefas com funcionalidades de autenticação, criação e organização de tarefas, lembretes, metas de produtividade, visualizações e integração com calendário.
+
+---
+
+## Sprints
+
+| **Entrega** | **Início** | **Prazo** | **Status**     |
+|-------------|------------|-----------|----------------|
+| 1           | 05/03      | 12/03     | Em andamento   |
+| 2           | 13/03      | 26/03     | Planejada      |
+| 3           | 27/03      | 09/04     | Planejada      |
+
+---
+
+## Épicos
+
+| **ID** | **Descrição**                                                        | **Prioridade** |
+|--------|----------------------------------------------------------------------|----------------|
+| 1      | Cadastro e Autenticação do Usuário                                    | Alta           |
+| 2      | Gerenciamento de Tarefas                                              | Alta           |
+| 3      | Organizações e Categorias de Tarefas                                  | Média          |
+| 4      | Lembretes e Notificações                                              | Alta           |
+| 5      | Visualizações e Estatísticas de Produtividade                         | Média          |
+| 6      | Integração com Google Calendar                                        | Baixa          |
+| 7      | Personalização da Interface                                           | Baixa          |
+
+---
+
+## Backlog
+
+| **Épico ID** | **US ID** | **Descrição**                                                                 | **Sprint** |
+|--------------|-----------|-------------------------------------------------------------------------------|------------|
+| 1            | 1         | Eu, como usuário, quero me cadastrar e autenticar no aplicativo com e-mail e senha | 1          |
+| 2            | 2         | Eu, como usuário, quero criar, editar e excluir tarefas com título, descrição e prazo | 1          |
+| 2            | 3         | Eu, como usuário, quero definir a prioridade de cada tarefa (alta, média, baixa) | 1          |
+| 4            | 4         | Eu, como usuário, quero adicionar lembretes e receber notificações para tarefas | 1          |
+| 2            | 5         | Eu, como usuário, quero criar listas de tarefas, com a possibilidade de adicionar, editar e excluir itens | 2          |
+| 3            | 6         | Eu, como usuário, quero poder adicionar tags ou categorias personalizadas para organizar minhas tarefas | 2          |
+| 4            | 7         | Eu, como usuário, quero que o aplicativo me envie notificações sobre tarefas próximas do prazo de vencimento | 2          |
+| 5            | 8         | Eu, como usuário, quero visualizar meu progresso de produtividade ao longo do tempo | 2          |
+| 3            | 9         | Eu, como usuário, quero criar rotinas diárias ou semanais com tarefas predefinidas | 3          |
+| 2            | 10        | Eu, como usuário, quero poder marcar tarefas como concluídas e manter um histórico delas | 3          |
+| 6            | 11        | Eu, como usuário, quero integrar o aplicativo com o Google Calendar para importar compromissos | 3          |
+| 7            | 12        | Eu, como usuário, quero personalizar a interface, incluindo cores e temas | 3          |
+
+---
 
