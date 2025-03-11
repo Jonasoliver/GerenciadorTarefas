@@ -118,87 +118,20 @@ Este projeto é um aplicativo mobile desenvolvido em React Native (frontend) e J
 
 📋 Entregas por Sprint
 
-Sprint
+| Sprint  | Funcionalidade                                  | Descrição |
+|---------|----------------------------------------------|------------|
+| **1**  | Criar conta e autenticação                  | Login e cadastro de usuário via e-mail e senha |
+| **1**  | Criar e gerenciar tarefas                   | Adicionar, editar e excluir tarefas |
+| **1**  | Definir prioridade                          | Priorizar tarefas como alta, média ou baixa |
+| **1**  | Listar tarefas                              | Exibir tarefas cadastradas |
+| **2**  | Adicionar lembretes e notificações         | Alertas sobre prazos de tarefas |
+| **2**  | Criar listas de tarefas                    | Organização personalizada de tarefas |
+| **2**  | Adicionar tags/categorias                  | Etiquetar tarefas para melhor organização |
+| **2**  | Criar rotinas de tarefas recorrentes       | Definir repetições diárias ou semanais |
+| **2**  | Marcar tarefas como concluídas            | Registro de tarefas finalizadas |
+| **3**  | Modo Foco                                  | Exibir apenas tarefas urgentes/importantes |
+| **3**  | Integração com Google Calendar            | Sincronização de eventos/tarefas |
+| **3**  | Estatísticas de desempenho                | Relatórios e gráficos de produtividade |
+| **3**  | Personalização da interface               | Customização de temas e cores |
 
-Funcionalidade
-
-Descrição
-
-1
-
-Criar conta e autenticação
-
-Login e cadastro de usuário via e-mail e senha
-
-1
-
-Criar e gerenciar tarefas
-
-Adicionar, editar e excluir tarefas
-
-1
-
-Definir prioridade
-
-Priorizar tarefas como alta, média ou baixa
-
-1
-
-Listar tarefas
-
-Exibir tarefas cadastradas
-
-2
-
-Adicionar lembretes e notificações
-
-Alertas sobre prazos de tarefas
-
-2
-
-Criar listas de tarefas
-
-Organização personalizada de tarefas
-
-2
-
-Adicionar tags/categorias
-
-Etiquetar tarefas para melhor organização
-
-2
-
-Criar rotinas de tarefas recorrentes
-
-Definir repetições diárias ou semanais
-
-2
-
-Marcar tarefas como concluídas
-
-Registro de tarefas finalizadas
-
-3
-
-Modo Foco
-
-Exibir apenas tarefas urgentes/importantes
-
-3
-
-Integração com Google Calendar
-
-Sincronização de eventos/tarefas
-
-3
-
-Estatísticas de desempenho
-
-Relatórios e gráficos de produtividade
-
-3
-
-Personalização da interface
-
-Customização de temas e cores
 
