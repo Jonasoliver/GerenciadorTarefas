@@ -119,19 +119,25 @@ Este projeto é um aplicativo mobile desenvolvido em React Native (frontend) e J
 📋 Entregas por Sprint
 
 | Sprint  | Funcionalidade                                  | Descrição |
-|---------|----------------------------------------------|------------|
-| **1**  | Criar conta e autenticação                  | Login e cadastro de usuário via e-mail e senha |
-| **1**  | Criar e gerenciar tarefas                   | Adicionar, editar e excluir tarefas |
-| **1**  | Definir prioridade                          | Priorizar tarefas como alta, média ou baixa |
-| **1**  | Listar tarefas                              | Exibir tarefas cadastradas |
-| **2**  | Adicionar lembretes e notificações         | Alertas sobre prazos de tarefas |
-| **2**  | Criar listas de tarefas                    | Organização personalizada de tarefas |
-| **2**  | Adicionar tags/categorias                  | Etiquetar tarefas para melhor organização |
-| **2**  | Criar rotinas de tarefas recorrentes       | Definir repetições diárias ou semanais |
-| **2**  | Marcar tarefas como concluídas            | Registro de tarefas finalizadas |
-| **3**  | Modo Foco                                  | Exibir apenas tarefas urgentes/importantes |
-| **3**  | Integração com Google Calendar            | Sincronização de eventos/tarefas |
-| **3**  | Estatísticas de desempenho                | Relatórios e gráficos de produtividade |
-| **3**  | Personalização da interface               | Customização de temas e cores |
+|---------|-----------------------------------------------|------------|
+| **1**  | Criar conta e autenticação                   | Login e cadastro de usuário via e-mail e senha |
+| **1**  | Criar e gerenciar tarefas                    | Adicionar, editar e excluir tarefas |
+| **1**  | Definir prioridade                           | Priorizar tarefas como alta, média ou baixa |
+| **1**  | Listar tarefas                               | Exibir tarefas cadastradas |
+| **1**  | Marcar tarefas como concluídas              | Registrar tarefas finalizadas e arquivá-las |
+| **2**  | Adicionar lembretes e notificações          | Alertas sobre prazos de tarefas |
+| **2**  | Criar listas de tarefas                     | Organização personalizada de tarefas |
+| **2**  | Adicionar tags/categorias                   | Etiquetar tarefas para melhor organização |
+| **2**  | Criar rotinas de tarefas recorrentes        | Definir repetições diárias ou semanais |
+| **2**  | Anexar arquivos, imagens e links           | Adicionar anexos às tarefas |
+| **2**  | Classificação de tarefas                   | Ordenar tarefas por data de vencimento ou prioridade |
+| **2**  | Compartilhamento de tarefas                | Permitir colaboração com outras pessoas |
+| **3**  | Modo Foco                                   | Exibir apenas tarefas urgentes/importantes |
+| **3**  | Integração com Google Calendar             | Sincronização de eventos/tarefas |
+| **3**  | Estatísticas de desempenho                 | Relatórios e gráficos de produtividade |
+| **3**  | Visualização de tarefas (Lista, Kanban, Calendário) | Diferentes formas de exibição |
+| **3**  | Escanear QR Code ou código de barras       | Vincular tarefas a códigos QR/barras |
+| **3**  | Personalização da interface                | Customização de temas e cores |
+
 
 
