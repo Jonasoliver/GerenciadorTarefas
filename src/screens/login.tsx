@@ -17,6 +17,7 @@ const LoginScreen: React.FC = ({ navigation }: any) => {
   const handleSignUp = () => {
     // Navegar para a tela de cadastro, por exemplo
     console.log('Navegar para tela de cadastro');
+    navigation.navigate('SignUp');
   };
 
   return (
