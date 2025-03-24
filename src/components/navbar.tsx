@@ -1,5 +1,5 @@
 import { View, Text, TouchableOpacity, Modal, StyleSheet } from "react-native";
-import styles from './styles/navBarStyles';
+import styles from "../styles/navBarStyles";
 import React, { useState } from "react";
 import { Ionicons } from "@expo/vector-icons";
 
@@ -21,18 +21,18 @@ const Navbar = () => {
       <Text style={styles.title}>TaskFlow</Text>
       <View style={styles.menu}>
         <TouchableOpacity style={styles.menuItem}>
-          <Ionicons name="home-outline" size={24} color="#fff" />
+          <Ionicons name="home-outline" size={28} color="#fff" />
           <Text style={styles.menuText}>Home</Text>
         </TouchableOpacity>
 
         {/* Tarefa com funcionalidade de ordenação */}
         <TouchableOpacity style={styles.menuItem} onPress={toggleModal}>
-          <Ionicons name="list-outline" size={24} color="#fff" />
+          <Ionicons name="list-outline" size={28} color="#fff" />
           <Text style={styles.menuText}>Tarefas</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.menuItem}>
-          <Ionicons name="settings-outline" size={24} color="#fff" />
+          <Ionicons name="settings-outline" size={28} color="#fff" />
           <Text style={styles.menuText}>Config</Text>
         </TouchableOpacity>
       </View>
@@ -62,9 +62,6 @@ const Navbar = () => {
           </View>
         </View>
       </Modal>
-
-     
-      
     </View>
   );
 };
