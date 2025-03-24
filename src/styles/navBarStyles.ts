@@ -5,34 +5,30 @@ export default StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    paddingVertical: 15, // Aumentamos o padding para dar mais altura à navbar
+    paddingVertical: 10,
     paddingHorizontal: 20,
-    borderBottomLeftRadius: 15, // Arredondar mais os cantos para ficar mais moderno
-    borderBottomRightRadius: 15,
+    borderBottomLeftRadius: 10,
+    borderBottomRightRadius: 10,
     backgroundColor: "#333",
     shadowColor: "#000",
-    shadowOffset: { width: 0, height: 4 }, // Aumentamos a sombra para um efeito mais suave
-    shadowOpacity: 0.1,
-    shadowRadius: 6,
-    zIndex: 1000, // Garante que a navbar não seja sobreposta pelas notificações
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.8,
+    shadowRadius: 2,
   },
   title: {
-    fontSize: 24, // Aumentamos o tamanho da fonte para dar mais destaque ao título
+    fontSize: 20,
     color: "#fff",
-    fontWeight: "bold", // Torna o título mais robusto
   },
   menu: {
     flexDirection: "row",
-    alignItems: "center", // Garantir que os itens do menu fiquem alinhados corretamente
   },
   menuItem: {
-    marginLeft: 20, // Aumentamos a margem para dar mais espaçamento entre os itens
+    marginLeft: 15,
     alignItems: "center",
   },
   menuText: {
     color: "#fff",
     marginTop: 5,
-    fontSize: 14, // Reduzimos o tamanho da fonte para um melhor equilíbrio visual
   },
   // Estilos para o modal
   modalOverlay: {
