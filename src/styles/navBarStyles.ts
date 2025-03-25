@@ -5,30 +5,32 @@ export default StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    paddingVertical: 10,
+    paddingVertical: 15,  // Mantém o espaçamento interno vertical, mas vamos focar no paddingTop
     paddingHorizontal: 20,
-    borderBottomLeftRadius: 10,
-    borderBottomRightRadius: 10,
-    backgroundColor: "#333",
+    paddingTop: 30, // Adicionando mais padding no topo para afastar mais a navbar do topo da tela
+    backgroundColor: "#6200ea", // Cor de fundo da navbar
+    borderBottomLeftRadius: 20,
+    borderBottomRightRadius: 20,
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.8,
     shadowRadius: 2,
   },
   title: {
-    fontSize: 20,
+    fontSize: 24, // Tamanho do título ajustado
     color: "#fff",
   },
   menu: {
     flexDirection: "row",
   },
   menuItem: {
-    marginLeft: 15,
+    marginLeft: 20, // Espaçamento maior entre os itens do menu
     alignItems: "center",
   },
   menuText: {
     color: "#fff",
-    marginTop: 5,
+    marginTop: 5, // Espaço entre o ícone e o texto
+    fontSize: 14,
   },
   // Estilos para o modal
   modalOverlay: {

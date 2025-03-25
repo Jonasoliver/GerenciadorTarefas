@@ -1,19 +1,19 @@
 import { View, Text, TouchableOpacity, Modal, StyleSheet } from "react-native";
-import styles from './styles/navBarStyles';
 import React, { useState } from "react";
 import { Ionicons } from "@expo/vector-icons";
+import styles from "../styles/navBarStyles";
 
 const Navbar = () => {
-  const [isModalVisible, setIsModalVisible] = useState(false); // Controla a visibilidade do Modal
-  const [selectedOption, setSelectedOption] = useState<string | null>(null); // Armazena a opção selecionada
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [selectedOption, setSelectedOption] = useState<string | null>(null);
 
   const toggleModal = () => {
-    setIsModalVisible(!isModalVisible); // Alterna a visibilidade do Modal
+    setIsModalVisible(!isModalVisible);
   };
 
   const handleOptionSelect = (option: string) => {
-    setSelectedOption(option); // Define a opção selecionada
-    toggleModal(); // Fecha o modal após selecionar a opção
+    setSelectedOption(option);
+    toggleModal();
   };
 
   return (
@@ -21,18 +21,17 @@ const Navbar = () => {
       <Text style={styles.title}>TaskFlow</Text>
       <View style={styles.menu}>
         <TouchableOpacity style={styles.menuItem}>
-          <Ionicons name="home-outline" size={24} color="#fff" />
+          <Ionicons name="home-outline" size={26} color="#fff" />
           <Text style={styles.menuText}>Home</Text>
         </TouchableOpacity>
 
-        {/* Tarefa com funcionalidade de ordenação */}
         <TouchableOpacity style={styles.menuItem} onPress={toggleModal}>
-          <Ionicons name="list-outline" size={24} color="#fff" />
+          <Ionicons name="list-outline" size={26} color="#fff" />
           <Text style={styles.menuText}>Tarefas</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.menuItem}>
-          <Ionicons name="settings-outline" size={24} color="#fff" />
+          <Ionicons name="settings-outline" size={26} color="#fff" />
           <Text style={styles.menuText}>Config</Text>
         </TouchableOpacity>
       </View>
@@ -41,7 +40,7 @@ const Navbar = () => {
       <Modal
         transparent={true}
         visible={isModalVisible}
-        animationType="slide"
+        animationType="fade"
         onRequestClose={toggleModal}
       >
         <View style={styles.modalOverlay}>
@@ -62,9 +61,6 @@ const Navbar = () => {
           </View>
         </View>
       </Modal>
-
-     
-      
     </View>
   );
 };
