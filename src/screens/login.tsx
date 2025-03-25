@@ -22,7 +22,6 @@ const LoginScreen: React.FC = ({ navigation }: any) => {
     const screenWidth = Dimensions.get('window').width;
     const screenHeight = Dimensions.get('window').height;
 
-    
     for (let i = 0; i < 100; i++) {
       const size = Math.random() * 5 + 2; 
       const startPosition = Math.random() * screenWidth;
@@ -30,7 +29,6 @@ const LoginScreen: React.FC = ({ navigation }: any) => {
       const duration = Math.random() * 5000 + 5000; 
       const fallAnimation = new Animated.Value(startY); 
 
-     
       Animated.loop(
         Animated.timing(fallAnimation, {
           toValue: screenHeight + size, 
@@ -84,7 +82,6 @@ const LoginScreen: React.FC = ({ navigation }: any) => {
         </TouchableOpacity>
       </View>
 
-    
       {snowflakes.map((flake, index) => (
         <Animated.View
           key={index}
@@ -106,7 +103,7 @@ const LoginScreen: React.FC = ({ navigation }: any) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#333',
+    backgroundColor: '#4B0082', 
     justifyContent: 'center',
     padding: 20,
     position: 'relative',
@@ -126,7 +123,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     textAlign: 'center',
     marginBottom: 30,
-    color: '#bbb',
+    color: '#ddd', 
   },
   input: {
     height: 50,
@@ -136,12 +133,12 @@ const styles = StyleSheet.create({
     marginBottom: 15,
     paddingHorizontal: 15,
     fontSize: 16,
-    backgroundColor: '#444',
+    backgroundColor: '#5E4B8B', 
     color: '#fff',
     zIndex: 2, 
   },
   button: {
-    backgroundColor: '#4CAF50',
+    backgroundColor: '#4CAF50', 
     paddingVertical: 15,
     borderRadius: 10,
     marginBottom: 20,
@@ -159,16 +156,16 @@ const styles = StyleSheet.create({
   },
   footerText: {
     fontSize: 16,
-    color: '#bbb',
+    color: '#ddd', 
   },
   linkText: {
     fontSize: 16,
-    color: '#4CAF50',
+    color: '#4CAF50', 
     fontWeight: 'bold',
   },
   snowflake: {
     position: 'absolute',
-    backgroundColor: '#fff',
+    backgroundColor: '#ddd', 
     borderRadius: 50,
     opacity: 0.7,
     zIndex: 1, 
