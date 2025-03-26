@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { View, TextInput, Button, Text } from 'react-native';
-import styles from '../styles/TaskFormStyles';
+import { View, TextInput, Text, TouchableOpacity, StyleSheet } from 'react-native';
 
 interface TaskFormProps {
   onSubmit?: (task: { title: string; description: string; startDate: string; endDate: string; priority: string }) => void;
@@ -16,22 +15,23 @@ const TaskForm: React.FC<TaskFormProps> = ({ onSubmit }) => {
   const handleSubmit = () => {
     if (title.trim() && description.trim() && startDate && endDate) {
       onSubmit?.({ title, description, startDate, endDate, priority });
+      // Resetar campos após o envio
       setTitle('');
       setDescription('');
       setStartDate('');
       setEndDate('');
-      setPriority('Medium'); // Resetar a prioridade
+      setPriority('Medium');
     }
   };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.header}>Task Form</Text>
+      <Text style={styles.header}>Adicionar Tarefa</Text>
 
       {/* Título da tarefa */}
       <TextInput
         style={styles.input}
-        placeholder="Task Title"
+        placeholder="Título da Tarefa"
         value={title}
         onChangeText={setTitle}
       />
@@ -39,7 +39,7 @@ const TaskForm: React.FC<TaskFormProps> = ({ onSubmit }) => {
       {/* Descrição da tarefa */}
       <TextInput
         style={[styles.input, styles.textArea]}
-        placeholder="Task Description"
+        placeholder="Descrição da Tarefa"
         value={description}
         onChangeText={setDescription}
         multiline
@@ -48,7 +48,7 @@ const TaskForm: React.FC<TaskFormProps> = ({ onSubmit }) => {
       {/* Data de início */}
       <TextInput
         style={styles.input}
-        placeholder="Start Date (YYYY-MM-DD)"
+        placeholder="Data de Início (YYYY-MM-DD)"
         value={startDate}
         onChangeText={setStartDate}
       />
@@ -56,7 +56,7 @@ const TaskForm: React.FC<TaskFormProps> = ({ onSubmit }) => {
       {/* Data de término */}
       <TextInput
         style={styles.input}
-        placeholder="End Date (YYYY-MM-DD)"
+        placeholder="Data de Término (YYYY-MM-DD)"
         value={endDate}
         onChangeText={setEndDate}
       />
@@ -64,15 +64,62 @@ const TaskForm: React.FC<TaskFormProps> = ({ onSubmit }) => {
       {/* Prioridade */}
       <TextInput
         style={styles.input}
-        placeholder="Priority (High, Medium, Low)"
+        placeholder="Prioridade (Alta, Média, Baixa)"
         value={priority}
         onChangeText={setPriority}
       />
 
       {/* Botão de envio */}
-      <Button title="Submit" onPress={handleSubmit} />
+      <TouchableOpacity style={styles.saveButton} onPress={handleSubmit}>
+        <Text style={styles.saveButtonText}>Salvar</Text>
+      </TouchableOpacity>
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 16,
+    backgroundColor: '#f8f8f8', // Cor mais suave para o fundo
+  },
+  header: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 16,
+    color: '#6200ea', // Cor roxa, igual à navbar
+  },
+  input: {
+    width: '100%',
+    padding: 12,
+    marginBottom: 12,
+    borderWidth: 1,
+    borderColor: '#ddd',
+    borderRadius: 8,
+    backgroundColor: '#fff', // Branco para os campos de texto
+    fontSize: 16,
+    color: '#333', // Cor do texto dentro dos campos
+  },
+  textArea: {
+    height: 100,
+    textAlignVertical: 'top', // Alinha o texto no topo para uma área de descrição
+  },
+  saveButton: {
+    width: '100%', // Botão comprido
+    paddingVertical: 15,
+    borderRadius: 8, // Borda arredondada
+    backgroundColor: '#6200ea', // Cor roxa
+    marginTop: 20, // Distância do último input
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  saveButtonText: {
+    color: '#fff',
+    fontWeight: 'bold',
+    fontSize: 18,
+  },
+});
 
 export default TaskForm;

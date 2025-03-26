@@ -3,42 +3,62 @@ import { View, Text, TouchableOpacity, StyleSheet, Alert, Modal } from 'react-na
 import { MaterialIcons } from '@expo/vector-icons';
 
 interface TaskCardProps {
-  id?: number; // Agora o ID é opcional
+  id?: number;
   title: string;
   description: string;
+  priority: string; // Prioridade (Alta, Média, Baixa)
+  navigation: any; // Para navegação
+  onMarkCompleted: (id: number) => void;
+  onDelete: (id: number) => void;
 }
 
-const TaskCard: React.FC<TaskCardProps> = ({ id, title, description }) => {
-  const [cardColor, setCardColor] = useState('#f0f0f0'); // Cor inicial do card
-  const [showColorPalette, setShowColorPalette] = useState(false); // Controla a exibição da paleta de cores
+const TaskCard: React.FC<TaskCardProps> = ({ id, title, description, priority, navigation, onMarkCompleted, onDelete }) => {
+  const [cardColor, setCardColor] = useState('#f0f0f0');
+  const [showColorPalette, setShowColorPalette] = useState(false);
 
   const handleEdit = () => {
-    Alert.alert('Editar', `Você clicou para editar a tarefa: ${title}`);
+    navigation.navigate('TaskForm', { taskId: id, taskTitle: title, taskDescription: description });
   };
 
   const handleView = () => {
-    Alert.alert('Visualizar', `Você clicou para visualizar a tarefa: ${title}`);
+    // Navegar para a tela TaskList passando os parâmetros necessários
+    navigation.navigate('TaskList', { taskId: id, taskTitle: title, taskDescription: description });
   };
 
   const handleCustomize = () => {
-    setShowColorPalette(true); // Abre a paleta de cores
+    setShowColorPalette(true);
   };
 
   const handleColorChange = (color: string) => {
-    setCardColor(color); // Altera a cor do card
-    setShowColorPalette(false); // Fecha a paleta de cores
+    setCardColor(color);
+    setShowColorPalette(false);
   };
 
   const handleRemoveColor = () => {
-    setCardColor('#f0f0f0'); // Reseta a cor para o padrão
-    setShowColorPalette(false); // Fecha a paleta de cores
+    setCardColor('#f0f0f0');
+    setShowColorPalette(false);
+  };
+
+  const handleMarkCompleted = () => {
+    onMarkCompleted(id!);
+  };
+
+  const handleDelete = () => {
+    onDelete(id!);
   };
 
   return (
-    <View style={[styles.card, { backgroundColor: cardColor }]}>      
+    <View style={[styles.card, { backgroundColor: cardColor }]}>
+      {/* Prioridade */}
+      <View style={[styles.priorityTag, { backgroundColor: priority === 'Alta' ? '#FF5733' : priority === 'Média' ? '#FFBD33' : '#33FF57' }]}>
+        <Text style={styles.priorityText}>Prioridade: {priority}</Text>
+      </View>
+
+      {/* Título e Descrição */}
       <Text style={styles.title}>{title}</Text>
       <Text style={styles.description}>{description}</Text>
 
+      {/* Ações dos ícones */}
       <View style={styles.iconsContainer}>
         <TouchableOpacity onPress={handleEdit} style={styles.iconButton}>
           <MaterialIcons name="edit" size={24} color="white" />
@@ -51,6 +71,17 @@ const TaskCard: React.FC<TaskCardProps> = ({ id, title, description }) => {
         </TouchableOpacity>
       </View>
 
+      {/* Botões de ação - Concluir e Excluir */}
+      <View style={styles.actionButtons}>
+        <TouchableOpacity onPress={handleMarkCompleted} style={styles.actionButton}>
+          <Text style={styles.actionButtonText}>Concluir</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={handleDelete} style={[styles.actionButton, styles.deleteButton]}>
+          <Text style={styles.actionButtonText}>Excluir</Text>
+        </TouchableOpacity>
+      </View>
+
+      {/* Modal de personalização de cor */}
       <Modal
         transparent={true}
         visible={showColorPalette}
@@ -97,6 +128,18 @@ const styles = StyleSheet.create({
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 4 },
   },
+  priorityTag: {
+    paddingVertical: 6,
+    paddingHorizontal: 14,
+    borderRadius: 15,
+    marginBottom: 10,
+    alignSelf: 'flex-start',
+  },
+  priorityText: {
+    color: '#fff',
+    fontWeight: 'bold',
+    fontSize: 14,
+  },
   title: {
     fontSize: 20,
     fontWeight: 'bold',
@@ -113,11 +156,32 @@ const styles = StyleSheet.create({
     marginTop: 16,
   },
   iconButton: {
-    backgroundColor: '#007bff',
+    backgroundColor: '#6200ea', // Cor roxa para combinar com a navbar
     padding: 10,
     borderRadius: 8,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  actionButtons: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 20,
+  },
+  actionButton: {
+    paddingVertical: 12,
+    paddingHorizontal: 20,
+    borderRadius: 8,
+    backgroundColor: '#6200ea', // Cor do botão
+    width: '48%',
+    alignItems: 'center',
+  },
+  deleteButton: {
+    backgroundColor: '#6200ea', // Botão de excluir em vermelho
+  },
+  actionButtonText: {
+    color: '#fff',
+    fontWeight: 'bold',
+    fontSize: 16,
   },
   modalOverlay: {
     flex: 1,
@@ -160,7 +224,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
     padding: 10,
     borderRadius: 8,
-    backgroundColor: '#dc3545',
+    backgroundColor: '#f44336',
     width: '100%',
     alignItems: 'center',
   },

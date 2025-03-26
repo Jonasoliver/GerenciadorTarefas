@@ -2,12 +2,20 @@ import React from 'react';
 import { View, Text, ScrollView, StyleSheet } from 'react-native';
 import TaskCard from './tarefaCard';
 
-const Home: React.FC = () => {
+const Home: React.FC = ({ navigation }: any) => {  
   const tasks = [
-    { id: 1, title: 'Tarefa 1', description: 'Descrição da tarefa 1' },
-    { id: 2, title: 'Tarefa 2', description: 'Descrição da tarefa 2' },
-    { id: 3, title: 'Tarefa 3', description: 'Descrição da tarefa 3' },
+    { id: 1, title: 'Tarefa 1', description: 'Descrição da tarefa 1', priority: 'Alta' },
+    { id: 2, title: 'Tarefa 2', description: 'Descrição da tarefa 2', priority: 'Média' },
+    { id: 3, title: 'Tarefa 3', description: 'Descrição da tarefa 3', priority: 'Baixa' },
   ];
+
+  const handleMarkCompleted = (id: number) => {
+    alert(`Tarefa ${id} concluída!`);
+  };
+
+  const handleDelete = (id: number) => {
+    alert(`Tarefa ${id} excluída!`);
+  };
 
   return (
     <View style={styles.container}>
@@ -17,8 +25,13 @@ const Home: React.FC = () => {
           tasks.map(task => (
             <TaskCard
               key={task.id}
+              id={task.id}
               title={task.title}
               description={task.description}
+              priority={task.priority}  // Passando a prioridade
+              navigation={navigation}  // Passando navigation para o TaskCard
+              onMarkCompleted={handleMarkCompleted}  // Passando a função de concluir
+              onDelete={handleDelete}  // Passando a função de excluir
             />
           ))
         ) : (
