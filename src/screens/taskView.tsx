@@ -1,7 +1,7 @@
 import React from 'react';
-import { View, Text, StyleSheet, FlatList, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import { RouteProp } from '@react-navigation/native'; // Importar para acessar os parâmetros de navegação
-import { RootStackParamList } from '../../App'
+import { RootStackParamList } from '../../App';
 
 // Definir o tipo das propriedades passadas pela navegação
 interface Task {
@@ -19,31 +19,40 @@ interface TaskListScreenProps {
 }
 
 const TaskListScreen: React.FC<TaskListScreenProps> = ({ route }) => {
-  const { tasks } = route.params; // Acessando as tarefas passadas pela navegação
+  // Dados fictícios de tarefas
+  const tasks: Task[] = [
+    {
+      title: 'Reunião de equipe',
+      description: 'Discutir os próximos passos do projeto com a equipe.',
+      startDate: '2025-03-29',
+      endDate: '2025-03-29',
+      priority: 'Alta',
+    },
+  ];
 
-  const renderItem = ({ item }: { item: Task }) => (
-    <View style={styles.taskCard}>
-      <Text style={styles.taskTitle}>{item.title}</Text>
-      <Text style={styles.taskDescription}>{item.description}</Text>
-      <Text style={styles.taskDates}>
-        <Text style={styles.boldText}>Início:</Text> {item.startDate} {" | "}
-        <Text style={styles.boldText}>Término:</Text> {item.endDate}
-      </Text>
-      <Text style={[styles.priority, getPriorityStyle(item.priority)]}>
-        {item.priority}
-      </Text>
-    </View>
-  );
+  const task = tasks[0]; // Vamos exibir apenas a primeira tarefa
 
   return (
     <View style={styles.container}>
-      <Text style={styles.header}>Minhas Tarefas</Text>
-      <FlatList
-        data={tasks}
-        renderItem={renderItem}
-        keyExtractor={(item, index) => index.toString()}
-        contentContainerStyle={styles.list}
-      />
+      <Text style={styles.header}>Detalhes da Tarefa</Text>
+      <View style={styles.formContainer}>
+        <Text style={styles.label}>Título:</Text>
+        <Text style={styles.input}>{task.title}</Text>
+
+        <Text style={styles.label}>Descrição:</Text>
+        <Text style={styles.input}>{task.description}</Text>
+
+        <Text style={styles.label}>Início:</Text>
+        <Text style={styles.input}>{task.startDate}</Text>
+
+        <Text style={styles.label}>Término:</Text>
+        <Text style={styles.input}>{task.endDate}</Text>
+
+        <Text style={styles.label}>Prioridade:</Text>
+        <Text style={[styles.priority, getPriorityStyle(task.priority)]}>
+          {task.priority}
+        </Text>
+      </View>
     </View>
   );
 };
@@ -75,13 +84,9 @@ const styles = StyleSheet.create({
     color: '#6200ea',
     marginBottom: 16,
   },
-  list: {
-    paddingBottom: 16,
-  },
-  taskCard: {
+  formContainer: {
     backgroundColor: '#fff',
     padding: 16,
-    marginBottom: 16,
     borderRadius: 8,
     borderWidth: 1,
     borderColor: '#ddd',
@@ -90,32 +95,24 @@ const styles = StyleSheet.create({
     shadowRadius: 8,
     elevation: 5,
   },
-  taskTitle: {
-    fontSize: 18,
+  label: {
+    fontSize: 16,
     fontWeight: 'bold',
     color: '#333',
     marginBottom: 8,
   },
-  taskDescription: {
+  input: {
     fontSize: 16,
     color: '#666',
-    marginBottom: 8,
-  },
-  taskDates: {
-    fontSize: 14,
-    color: '#888',
-    marginBottom: 8,
+    marginBottom: 16,
   },
   priority: {
-    fontSize: 14,
+    fontSize: 16,
     color: '#fff',
-    paddingVertical: 4,
-    paddingHorizontal: 8,
+    paddingVertical: 6,
+    paddingHorizontal: 12,
     borderRadius: 12,
     alignSelf: 'flex-start',
-  },
-  boldText: {
-    fontWeight: 'bold',
   },
 });
 
