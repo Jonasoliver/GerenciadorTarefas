@@ -1,4 +1,3 @@
-// App.tsx
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -8,6 +7,7 @@ import TaskForm from './src/screens/TaskForm';
 import SignUpScreen from './src/screens/cadastro';
 import Navbar from './src/components/navbar';
 import TaskListScreen from './src/screens/taskView';
+import TaskFormEdit from './src/screens/taskFormEdit';
 
 type Task = {
   title: string;
@@ -15,14 +15,16 @@ type Task = {
   startDate: string;
   endDate: string;
   priority: string;
+  id: number; // Adicionando o id para identificação da tarefa
 };
 
 export type RootStackParamList = {
   Login: undefined;
   Home: undefined;
   TaskForm: undefined;
+  TaskFormEdit: { task: Task }; // Agora estamos passando um parâmetro para a tela de edição
   SignUp: undefined;
-  TaskList: { tasks: Task[] };  // Agora definimos que 'TaskList' espera o parâmetro 'tasks' como um array de Task
+  TaskList: { tasks: Task[] };  // Tarefa agora é um array de tarefas
 };
 
 const Stack = createStackNavigator<RootStackParamList>();
@@ -48,6 +50,13 @@ const App = () => {
           component={TaskForm}
           options={{
             header: () => <Navbar />, // Colocar a Navbar no cabeçalho da TaskForm
+          }}
+        />
+        <Stack.Screen
+          name="TaskFormEdit"
+          component={TaskFormEdit} // Nova tela de edição
+          options={{
+            header: () => <Navbar />, // Colocar a Navbar no cabeçalho da TaskFormEdit
           }}
         />
         <Stack.Screen

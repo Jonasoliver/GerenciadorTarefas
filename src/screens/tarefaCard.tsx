@@ -17,7 +17,14 @@ const TaskCard: React.FC<TaskCardProps> = ({ id, title, description, priority, n
   const [showColorPalette, setShowColorPalette] = useState(false);
 
   const handleEdit = () => {
-    navigation.navigate('TaskForm', { taskId: id, taskTitle: title, taskDescription: description });
+    // Verificar se todos os parâmetros necessários estão definidos
+    if (!id || !title || !description) {
+      Alert.alert('Erro', 'Tarefa não encontrada.');
+      return;
+    }
+
+    // Navegar para a tela TaskFormEdit com os parâmetros corretos
+    navigation.navigate('TaskFormEdit', { taskId: id, taskTitle: title, taskDescription: description });
   };
 
   const handleView = () => {
