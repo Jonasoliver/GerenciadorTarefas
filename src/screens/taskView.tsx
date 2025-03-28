@@ -1,6 +1,9 @@
 import React from 'react';
 import { View, Text, StyleSheet, FlatList, TouchableOpacity } from 'react-native';
+import { RouteProp } from '@react-navigation/native'; // Importar para acessar os parâmetros de navegação
+import { RootStackParamList } from '../../App'
 
+// Definir o tipo das propriedades passadas pela navegação
 interface Task {
   title: string;
   description: string;
@@ -9,11 +12,14 @@ interface Task {
   priority: string;
 }
 
+type TaskListScreenRouteProp = RouteProp<RootStackParamList, 'TaskList'>;
+
 interface TaskListScreenProps {
-  tasks: Task[];
+  route: TaskListScreenRouteProp;
 }
 
-const TaskListScreen: React.FC<TaskListScreenProps> = ({ tasks }) => {
+const TaskListScreen: React.FC<TaskListScreenProps> = ({ route }) => {
+  const { tasks } = route.params; // Acessando as tarefas passadas pela navegação
 
   const renderItem = ({ item }: { item: Task }) => (
     <View style={styles.taskCard}>
@@ -42,6 +48,7 @@ const TaskListScreen: React.FC<TaskListScreenProps> = ({ tasks }) => {
   );
 };
 
+// Função para determinar a cor da prioridade
 const getPriorityStyle = (priority: string) => {
   switch (priority) {
     case 'Alta':
@@ -55,6 +62,7 @@ const getPriorityStyle = (priority: string) => {
   }
 };
 
+// Estilos
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -64,7 +72,7 @@ const styles = StyleSheet.create({
   header: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: '#6200ea', // Cor roxa
+    color: '#6200ea',
     marginBottom: 16,
   },
   list: {
@@ -80,7 +88,7 @@ const styles = StyleSheet.create({
     shadowColor: '#000',
     shadowOpacity: 0.1,
     shadowRadius: 8,
-    elevation: 5, // Sombra para dar destaque no Android
+    elevation: 5,
   },
   taskTitle: {
     fontSize: 18,

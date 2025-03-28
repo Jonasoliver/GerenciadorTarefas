@@ -1,3 +1,4 @@
+// App.tsx
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -8,12 +9,20 @@ import SignUpScreen from './src/screens/cadastro';
 import Navbar from './src/components/navbar';
 import TaskListScreen from './src/screens/taskView';
 
-type RootStackParamList = {
+type Task = {
+  title: string;
+  description: string;
+  startDate: string;
+  endDate: string;
+  priority: string;
+};
+
+export type RootStackParamList = {
   Login: undefined;
   Home: undefined;
   TaskForm: undefined;
   SignUp: undefined;
-  TaskList: undefined;
+  TaskList: { tasks: Task[] };  // Agora definimos que 'TaskList' espera o parâmetro 'tasks' como um array de Task
 };
 
 const Stack = createStackNavigator<RootStackParamList>();
