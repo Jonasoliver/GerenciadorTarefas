@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { View, TextInput, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import axios from 'axios'; // Importando o axios para fazer requisições HTTP
 
 interface TaskFormProps {
   onSubmit?: (task: { title: string; description: string; startDate: string; endDate: string; priority: string }) => void;
@@ -12,15 +13,27 @@ const TaskForm: React.FC<TaskFormProps> = ({ onSubmit }) => {
   const [endDate, setEndDate] = useState('');
   const [priority, setPriority] = useState('Medium'); // Prioridade inicial como 'Medium'
 
-  const handleSubmit = () => {
+  // Função para enviar a tarefa para o backend
+  const handleSubmit = async () => {
     if (title.trim() && description.trim() && startDate && endDate) {
-      onSubmit?.({ title, description, startDate, endDate, priority });
-      // Resetar campos após o envio
-      setTitle('');
-      setDescription('');
-      setStartDate('');
-      setEndDate('');
-      setPriority('Medium');
+      try {
+        // Enviar os dados da tarefa para o backend via axios
+        const response = await axios.post('http://localhost:3000/tasks', { title, description, startDate, endDate, priority });
+
+        if (response.status === 201) {
+          // Se a tarefa foi criada com sucesso, chamar onSubmit (caso exista)
+          onSubmit?.({ title, description, startDate, endDate, priority });
+
+          // Resetar campos após o envio
+          setTitle('');
+          setDescription('');
+          setStartDate('');
+          setEndDate('');
+          setPriority('Medium');
+        }
+      } catch (error) {
+        console.error('Erro ao enviar a tarefa:', error);
+      }
     }
   };
 
